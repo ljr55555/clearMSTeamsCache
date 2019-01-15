@@ -13,4 +13,5 @@ Teams Process Sucessfully Stopped
 Clearing Teams Disk Cache
 Teams cache has been cleared
 
-Re-launching Teams```
+Re-launching Teams
+```

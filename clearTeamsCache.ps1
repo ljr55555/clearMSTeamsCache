@@ -1,4 +1,4 @@
-Write-Host "Clearing the Teams cache requires the teams clients to be closed."
+﻿Write-Host "Clearing the Teams cache requires the teams clients to be closed."
 Write-Host "This script WILL close Teams -- please make sure you will not lose any work before proceeding."
 $strClearCacheVerification = Read-Host "Are you sure you want to delete Teams Cache (Y/N)?"
 $strClearCacheVerification = $strClearCacheVerification.ToUpper()
@@ -27,8 +27,8 @@ elseif ($strClearCacheVerification -eq "Y"){
 		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\cache"  -ErrorAction Ignore | Remove-Item -Confirm:$false
 		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\databases"  -ErrorAction Ignore | Remove-Item -Confirm:$false
 		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\gpucache"  -ErrorAction Ignore | Remove-Item -Confirm:$false
-		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\Indexeddb"  -ErrorAction Ignore | Remove-Item  –recurse -Confirm:$false
-		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\Local Storage"  -ErrorAction Ignore | Remove-Item -Confirm:$false
+		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\Indexeddb"  -ErrorAction Ignore | Remove-Item –recurse -Confirm:$false
+		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\Local Storage"  -ErrorAction Ignore | Remove-Item –recurse -Confirm:$false
 		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\tmp"  -ErrorAction Ignore | Remove-Item -Confirm:$false
 		Write-Host "Teams cache has been cleared`n" -ForegroundColor Green
 	}

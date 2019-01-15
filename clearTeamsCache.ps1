@@ -27,7 +27,7 @@ elseif ($strClearCacheVerification -eq "Y"){
 		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\cache"  -ErrorAction Ignore | Remove-Item -Confirm:$false
 		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\databases"  -ErrorAction Ignore | Remove-Item -Confirm:$false
 		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\gpucache"  -ErrorAction Ignore | Remove-Item -Confirm:$false
-		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\Indexeddb"  -ErrorAction Ignore | Remove-Item -Confirm:$false
+		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\Indexeddb"  -ErrorAction Ignore | Remove-Item  –recurse -Confirm:$false
 		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\Local Storage"  -ErrorAction Ignore | Remove-Item -Confirm:$false
 		Get-ChildItem -Path $env:APPDATA\"Microsoft\teams\tmp"  -ErrorAction Ignore | Remove-Item -Confirm:$false
 		Write-Host "Teams cache has been cleared`n" -ForegroundColor Green
